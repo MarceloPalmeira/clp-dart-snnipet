@@ -35,7 +35,7 @@ void main(){
     print("Digite o valor do gasto extra:");
     String? gastoExtraInput = stdin.readLineSync();
     if(gastoExtraInput != null && gastoExtraInput.isNotEmpty){
-      viagem.setGastoExtra(double.parse(gastoExtraInput));
+      viagem.setGastoExtra(num.parse(gastoExtraInput));
     }
   }
 
