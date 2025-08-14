@@ -1,11 +1,6 @@
 import '../models/Viagem.dart';
 import 'CaptarInformacoes.dart';
-import 'dart:io';
 
-// To do 
-
-// Funcao para receber input de Distancia da viagem como String, tentar converter 
-// para double e usar try catch para captar erros
 
 List<classeDeImprimirMensagens> classesDeMensagem = [
   imprimirMensagemDeDistancia(),
@@ -15,10 +10,6 @@ List<classeDeImprimirMensagens> classesDeMensagem = [
   imprimirMensagemDeCustoDiario(),
 ];
 
-
-// eh int e deve ser convertido para int...
-
-// Criar funcao para adicionar gastos extras que usara do metodo setGastoExtra
 void main(){
 
   List<num> valoresParaViagem = [];
