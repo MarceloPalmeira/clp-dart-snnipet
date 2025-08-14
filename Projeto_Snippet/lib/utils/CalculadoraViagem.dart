@@ -1,6 +1,6 @@
 import '../models/Viagem.dart';
 import 'CaptarInformacoes.dart';
-
+import 'dart:io';
 
 List<classeDeImprimirMensagens> classesDeMensagem = [
   imprimirMensagemDeDistancia(),
@@ -27,7 +27,18 @@ void main(){
     gastoDiario: valoresParaViagem[4],
   );
 
-  
+  print("Sua viagem terá algum gasto Extra? (y/n)");
+  String? input = stdin.readLineSync();
+
+  // Bloco de If e Else
+  if(input == "y"){
+    print("Digite o valor do gasto extra:");
+    String? gastoExtraInput = stdin.readLineSync();
+    if(gastoExtraInput != null && gastoExtraInput.isNotEmpty){
+      viagem.setGastoExtra(double.parse(gastoExtraInput));
+    }
+  }
+
   viagem.getCustoTotal();
 
 }
