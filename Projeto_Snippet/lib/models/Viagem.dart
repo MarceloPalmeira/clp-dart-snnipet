@@ -2,13 +2,13 @@ const double TAXA_DE_SERVICO = 0.1;
 
 class Viagem {
 
-  double distancia;
-  double consumoCarro;
-  double precoCombustivel;
+  num distancia;
+  num consumoCarro;
+  num precoCombustivel;
 
   int diasDeViagem;
-  double gastoDiario;
-  double gastoExtra;
+  num gastoDiario;
+  num gastoExtra;
 
   Viagem(
     {
@@ -23,20 +23,20 @@ class Viagem {
   void setGastoExtra(double gastoExtra){
     this.gastoExtra = gastoExtra;
   }
-  double calcularCustoCombustivel() {
+  num  calcularCustoCombustivel() {
     return (distancia / consumoCarro) * precoCombustivel;
   }
   
-  double calcularGastoDiarios(){
+  num calcularGastoDiarios(){
     return this.diasDeViagem * gastoDiario;
   }
   
-  double getCustoTotal(){
-    double custoCombustivel = calcularCustoCombustivel();
-    double gastoDiario = calcularGastoDiarios();
+  num getCustoTotal(){
+    num custoCombustivel = calcularCustoCombustivel();
+    num gastoDiario = calcularGastoDiarios();
 
-    double custoBaseDaViagem = (custoCombustivel + gastoDiario + gastoExtra);
-    double custoDaViagemComTaxaDeServico = custoBaseDaViagem * (1 + TAXA_DE_SERVICO);
+    num custoBaseDaViagem = (custoCombustivel + gastoDiario + gastoExtra);
+    num custoDaViagemComTaxaDeServico = custoBaseDaViagem * (1 + TAXA_DE_SERVICO);
     print("Custo Total da Viagem: R\$ ${custoDaViagemComTaxaDeServico.toStringAsFixed(2)}");
     print("---Custo com Combustível: R\$ ${custoCombustivel.toStringAsFixed(2)}");
     print("---Gasto Diário: R\$ ${gastoDiario.toStringAsFixed(2)}");

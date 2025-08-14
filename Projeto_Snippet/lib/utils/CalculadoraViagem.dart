@@ -1,4 +1,5 @@
 import '../models/Viagem.dart';
+import 'CaptarInformacoes.dart';
 import 'dart:io';
 
 // To do 
@@ -6,19 +7,36 @@ import 'dart:io';
 // Funcao para receber input de Distancia da viagem como String, tentar converter 
 // para double e usar try catch para captar erros
 
-// Fazer a funcao acima para cada atributo da classe Viagem, exceto diasDeViagem que
+List<classeDeImprimirMensagens> classesDeMensagem = [
+  imprimirMensagemDeDistancia(),
+  imprimirMensagemDeConsumo(),
+  imprimirMensagemDePrecoCombustivel(),
+  imprimirMensagemDeDuracao(),
+  imprimirMensagemDeCustoDiario(),
+];
+
+
 // eh int e deve ser convertido para int...
 
 // Criar funcao para adicionar gastos extras que usara do metodo setGastoExtra
 void main(){
+
+  List<num> valoresParaViagem = [];
+
+  for (var object in classesDeMensagem) {
+    num valor = inputParaViagem(object);
+    valoresParaViagem.add(valor);
+  }
+
   var viagem = Viagem(
-    distancia: 100.0,
-    consumoCarro: 10.0,
-    precoCombustivel: 5.0,
-    diasDeViagem: 2,
-    gastoDiario: 50.0,
+    distancia: valoresParaViagem[0],
+    consumoCarro: valoresParaViagem[1],
+    precoCombustivel: valoresParaViagem[2],
+    diasDeViagem: int.parse(valoresParaViagem[3].toString()),
+    gastoDiario: valoresParaViagem[4],
   );
 
+  
   viagem.getCustoTotal();
 
 }
